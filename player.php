@@ -48,6 +48,7 @@ class player
 
 } 
 
+//以下、テストコード
 $player1 = new player();
 $player2 = new player();
 
