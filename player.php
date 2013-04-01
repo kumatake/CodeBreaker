@@ -11,6 +11,7 @@ class player
 	
 	public function setNumber($inputNumber){
 		
+		
 		for($i = 0; $i < FIGURE_LENGTH; $i++){
 			
 			$this->number[] = ($inputNumber % 10);
