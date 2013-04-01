@@ -5,7 +5,7 @@ class matchPlayer{
 	function match(){
 		if($count<>2){
 			if(isset($_GET["startbtn"]){
-				$count++
+				++$count;
 			}
 		}else{
 			return true;
