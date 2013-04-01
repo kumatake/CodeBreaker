@@ -39,18 +39,35 @@ class gameMaster
 			$answer = $this->player1->getNumber();
 		
 	
+		$eat = 0;
+		$bite = 0;
+		
 		for($i = 0; $i < $this->digitNumber; $i++){
 			for($j = 0; $j < $this->digitNumber; $j++){
 			
 				if(aNumber[$i] === $answer[$j]){
-					if($i === $j)
-						
+					if($i === $j){
 					
-				
+						$eat++;
+						break;
+					
+					}else{
+					
+						$bite++;
+						break;
+					
+					}
 				}
 			
 			}
 		}
+		
+		$resultEatBite = new eatBite();
+		$resultEatBite->setEat($eat);
+		$resultEatBite->setBite($bite);
+		
+		return $resultEatBite;
+		
 	
 	}
 	
