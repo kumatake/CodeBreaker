@@ -56,7 +56,7 @@ class player
 } 
 
 //以下、テストコード
-$player1 = new player();
+/*$player1 = new player();
 $player2 = new player();
 
 $player1->setNumber(192);
@@ -68,4 +68,4 @@ $player2->addHistory('921 0EAT 3BITE');
 var_dump($player1->getNumber());
 var_dump($player2->getNumber());
 var_dump($player1->getHistory());
-var_dump($player2->getHistory());
+var_dump($player2->getHistory());*/
