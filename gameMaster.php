@@ -3,14 +3,14 @@
 class gameMaster
 {
 	
-	private $turn;			// è”Ô§Œä—p
-/*	private $number;		// ”z—ñ ”—ñ‚Ì³Œë”»’è—p
-	private $answer;		// ”z—ñ ”—ñ‚Ì³Œë”»’è—p*/
-	private $playFlg;		// ƒvƒŒƒCƒ„[”§Œä—p
-	private $digitNumber;	//”—ñ‚ÌŒ…”(Œ»ó3‚ÅŒÅ’è)
-	private $mPlayer;		// matchPlayerƒNƒ‰ƒX‚ğŠi”[‚·‚é
-	private $player1;		// playerƒNƒ‰ƒX‚ğŠi”[‚·‚é
-	private $player2;		// playerƒNƒ‰ƒX‚ğŠi”[‚·‚é
+	private $turn;			// æ‰‹ç•ªåˆ¶å¾¡ç”¨
+/*	private $number;		// é…åˆ— æ•°åˆ—ã®æ­£èª¤åˆ¤å®šç”¨
+	private $answer;		// é…åˆ— æ•°åˆ—ã®æ­£èª¤åˆ¤å®šç”¨*/
+	private $playFlg;		// ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼æ•°åˆ¶å¾¡ç”¨
+	private $digitNumber;	//æ•°åˆ—ã®æ¡æ•°(ç¾çŠ¶3ã§å›ºå®š)
+	private $mPlayer;		// matchPlayerã‚¯ãƒ©ã‚¹ã‚’æ ¼ç´ã™ã‚‹
+	private $player1;		// playerã‚¯ãƒ©ã‚¹ã‚’æ ¼ç´ã™ã‚‹
+	private $player2;		// playerã‚¯ãƒ©ã‚¹ã‚’æ ¼ç´ã™ã‚‹
 	
 	public function __construct(){
 	
@@ -30,7 +30,7 @@ class gameMaster
 	
 	}
 	
-	// ³Œë”»’è
+	// æ­£èª¤åˆ¤å®š
 	public function judgeNum($aNumber){
 		
 		if($his->turn)
@@ -77,4 +77,4 @@ class gameMaster
 
 }
 
-// ˆÈ‰ºAƒeƒXƒgƒR[ƒh
+// ä»¥ä¸‹ã€ãƒ†ã‚¹ãƒˆã‚³ãƒ¼ãƒ‰

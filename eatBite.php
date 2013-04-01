@@ -39,7 +39,7 @@ class eatBite
 	
 }
 
-// ˆÈ‰ºAƒeƒXƒgƒR[ƒh
+// ä»¥ä¸‹ã€ãƒ†ã‚¹ãƒˆã‚³ãƒ¼ãƒ‰
 
 /*$eb = new eatBite;
 
