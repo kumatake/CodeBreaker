@@ -9,9 +9,11 @@ class player
 	protected $number;	//最初に設定する数列
 	protected $history;	//履歴の配列
 	
+	// 引数の数値を一つずつ配列に入れるメソッド
 	public function setNumber($inputNumber){
 		
 		
+		// 数値を分ける
 		for($i = 0; $i < FIGURE_LENGTH; $i++){
 			
 			$this->number[] = ($inputNumber % 10);
@@ -19,6 +21,7 @@ class player
 		
 		}
 		
+		// 配列の前後を入れ替える
 		for($i = 0; $i < FIGURE_LENGTH / 2; $i++){
 		
 			$temp = $this->number[$i];
@@ -29,18 +32,21 @@ class player
 		
 	}
 	
+	// 数値の配列を返すメソッド
 	public function getNumber(){
 		
 		return $this->number;
 		
 	}
 	
+	// 履歴の配列に引数を追加するメソッド
 	public function addHistory($history){
 	
 		$this->history[] = $history;
 	
 	}
 	
+	// 履歴の配列を返すメソッド
 	public function getHistory(){
 	
 		return $this->history;
