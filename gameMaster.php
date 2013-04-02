@@ -15,6 +15,9 @@ class gameMaster
 	public function __construct(){
 	
 		$this->digitNumber = 3;
+		
+		if(mt_rand(0,1))	$turn = true;
+		else			$turn = false;
 	
 	}
 	
