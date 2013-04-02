@@ -15,12 +15,13 @@ class gameMaster
 	public function __construct(){
 	
 		$this->digitNumber = 3;
-		
-		if(mt_rand(0, 1))
-			$turn = true;
-		else
-			$turn = false;
-
+		$this->mPlayer = new match();
+		if($mPlayer->match()){
+			if(mt_rand(0, 1))
+				$turn = true;
+			else
+				$turn = false;
+		}
 	}
 
 	public function startGame(){
