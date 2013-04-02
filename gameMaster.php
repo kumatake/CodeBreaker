@@ -25,7 +25,9 @@ class gameMaster
 	}
 
 	public function startGame(){
-
+		$this->player1 = new Player();
+		$this->player2 = new Player();
+		playGame();
 	}
 
 	public function endGame(){
