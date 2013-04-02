@@ -1,14 +1,16 @@
 <?php
 class matchPlayer{
-	$count;
+	private $count;
 	
 	function match(){
-		if($count<>2){
-			if(isset($_GET["startbtn"]){
+		while(0){
+			if($count<>2){
+			if(isset($_POST["startbtn"]){
 				++$count;
+			}else{
+				break;
 			}
-		}else{
-			return true;
 		}
+		return true;
 	}
 }
