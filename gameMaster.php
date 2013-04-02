@@ -2,7 +2,7 @@
 
 class gameMaster
 {
-	
+
 	private $turn;			// 手番制御用
 /*	private $number;		// 配列 数列の正誤判定用
 	private $answer;		// 配列 数列の正誤判定用*/
@@ -11,68 +11,68 @@ class gameMaster
 	private $mPlayer;		// matchPlayerクラスを格納する
 	private $player1;		// playerクラスを格納する
 	private $player2;		// playerクラスを格納する
-	
+
 	public function __construct(){
 	
 		$this->digitNumber = 3;
-	
+		
+		if(mt_rand(0, 1))
+			$turn = true;
+		else
+			$turn = false;
+
 	}
-	
+
 	public function startGame(){
-	
+
 	}
-	
+
 	public function endGame(){
-	
+
 	}
-	
+
 	public function playGame(){
-	
+
 	}
-	
+
 	// 正誤判定
 	public function judgeNum($aNumber){
-		
+
 		if($his->turn)
 			$answer = $this->player2->getNumber();
 		else
 			$answer = $this->player1->getNumber();
-		
-	
+
+
 		$eat = 0;
 		$bite = 0;
-		
+
 		for($i = 0; $i < $this->digitNumber; $i++){
 			for($j = 0; $j < $this->digitNumber; $j++){
-			
+
 				if(aNumber[$i] === $answer[$j]){
-					if($i === $j){
-					
+					if($i === $j)
 						$eat++;
-						break;
-					
-					}else{
-					
+					else
 						$bite++;
-						break;
 					
-					}
+					break;
 				}
-			
+
 			}
 		}
-		
+
 		$resultEatBite = new eatBite();
 		$resultEatBite->setEat($eat);
 		$resultEatBite->setBite($bite);
-		
+
 		return $resultEatBite;
-		
-	
+
+
 	}
-	
+
 	public function clear(){
-	
+
 	}
 
 }
