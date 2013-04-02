@@ -45,13 +45,34 @@ class gameMaster
 			$defPlayer = $this->player1;
 			
 		}
+		
+		//TODO:入力待ちの処理
+		$answer = 192;
+		
+		// 数値を分ける
+		for($i = 0; $i < $this->digitNumber; $i++){
+			
+			$aNumber[] = ($answer % 10);
+			$inputNumber /= 10;
+		
+		}
+		
+		// 配列の前後を入れ替える
+		for($i = 0; $i < FIGURE_LENGTH / 2; $i++){
+		
+			$temp = $this->number[$i];
+			$this->number[$i] = $this->number[FIGURE_LENGTH - 1 - $i];
+			$this->number[FIGURE_LENGTH - 1 - $i] = $temp;
+			
+		}
+		
 
 	}
 
 	// 正誤判定
 	public function judgeNum($aNumber){
 
-		if($his->turn)
+		if($this->turn)
 			$answer = $this->player2->getNumber();
 		else
 			$answer = $this->player1->getNumber();
