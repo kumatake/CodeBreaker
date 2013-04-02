@@ -32,6 +32,18 @@ class gameMaster
 	}
 
 	public function playGame(){
+	
+		if($this->turn){
+		
+			$atkPlayer = $this->player1;
+			$defPlayer = $this->player2;
+		
+		} else {
+			
+			$atkPlayer = $this->player2;
+			$defPlayer = $this->player1;
+			
+		}
 
 	}
 
