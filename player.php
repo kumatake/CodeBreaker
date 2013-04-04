@@ -1,20 +1,26 @@
 <?
-define('FIGURE_LENGTH', 3);
 
 class player
 {
 	
 	
 	
-	protected $number;	//最初に設定する数列
-	protected $history;	//履歴の配列
+	protected $number;		// 最初に設定する数列
+	protected $history;		// 履歴の配列
+	protected $digitNumber;	// 数値の桁数
+	
+	public function __construct($digit){
+	
+		$this->digitNumber = $digit;
+	
+	}
 	
 	// 引数の数値を一つずつ配列に入れるメソッド
 	public function setNumber($inputNumber){
 		
 		
 		// 数値を分ける
-		for($i = 0; $i < FIGURE_LENGTH; $i++){
+		for($i = 0; $i < $this->digitNumber; $i++){
 			
 			$this->number[] = ($inputNumber % 10);
 			$inputNumber /= 10;
@@ -22,11 +28,11 @@ class player
 		}
 		
 		// 配列の前後を入れ替える
-		for($i = 0; $i < FIGURE_LENGTH / 2; $i++){
+		for($i = 0; $i < $this->digitNumber / 2; $i++){
 		
 			$temp = $this->number[$i];
-			$this->number[$i] = $this->number[FIGURE_LENGTH - 1 - $i];
-			$this->number[FIGURE_LENGTH - 1 - $i] = $temp;
+			$this->number[$i] = $this->number[ $this->digitNumber - 1 - $i];
+			$this->number[ $this->digitNumber - 1 - $i] = $temp;
 			
 		}
 		
@@ -56,8 +62,8 @@ class player
 } 
 
 //以下、テストコード
-/*$player1 = new player();
-$player2 = new player();
+$player1 = new player(3);
+$player2 = new player(3);
 
 $player1->setNumber(192);
 $player2->setNumber(168);
@@ -68,4 +74,4 @@ $player2->addHistory('921 0EAT 3BITE');
 var_dump($player1->getNumber());
 var_dump($player2->getNumber());
 var_dump($player1->getHistory());
-var_dump($player2->getHistory());*/
+var_dump($player2->getHistory());
