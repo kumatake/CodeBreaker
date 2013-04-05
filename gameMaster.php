@@ -1,5 +1,10 @@
 <?
 
+require("eatBite.php");
+//require("matchPlayer.php");
+require("player.php");
+
+
 class gameMaster
 {
 
@@ -15,58 +20,73 @@ class gameMaster
 	public function __construct(){
 	
 		$this->digitNumber = 3;
-		$this->mPlayer = new match();
+/*		$this->mPlayer = new matchPlayer();
 		if($mPlayer->match()){
 			if(mt_rand(0, 1))
 				$turn = true;
 			else
 				$turn = false;
-		}
+		}*/
+		
+		$turn = true;
+		
 	}
 
-	public function startGame(){
-		$this->player1 = new Player();
-		$this->player2 = new Player();
-		playGame();
+	public function startGame($p1Num, $p2Num){
+		$this->player1 = new Player(3);
+		$this->player2 = new Player(3);
+		$this->player1->setNumber($p1Num);
+		$this->player2->setNumber($p2Num);
+		$this->playGame();
 	}
 
 	public function endGame(){
+	
+		echo nl2br("\n終了します。");
 
 	}
 
 	public function playGame(){
-	
-		if($this->turn){
-		
-			$atkPlayer = $this->player1;
-			$defPlayer = $this->player2;
-		
-		} else {
-			
-			$atkPlayer = $this->player2;
-			$defPlayer = $this->player1;
-			
-		}
 		
 		//TODO:入力待ちの処理
 		$answer = 192;
+		$inputNumber = $answer;
 		
 		// 数値を分ける
 		for($i = 0; $i < $this->digitNumber; $i++){
 			
-			$aNumber[] = ($answer % 10);
+			$aNumber[] = ($inputNumber % 10);
 			$inputNumber /= 10;
 		
 		}
 		
 		// 配列の前後を入れ替える
-		for($i = 0; $i < FIGURE_LENGTH / 2; $i++){
+		for($i = 0; $i < $this->digitNumber / 2; $i++){
 		
-			$temp = $this->number[$i];
-			$this->number[$i] = $this->number[FIGURE_LENGTH - 1 - $i];
-			$this->number[FIGURE_LENGTH - 1 - $i] = $temp;
+			$temp = $aNumber[$i];
+			$aNumber[$i] = $aNumber[$this->digitNumber - 1 - $i];
+			$aNumber[$this->digitNumber - 1 - $i] = $temp;
 			
 		}
+		
+		$result = $this->judgeNum($aNumber);
+		
+		echo $answer . ', ' . $result->getEat() . ', ' . $result->getBite() . "\n";
+		
+		if($result->getEat() === 3){
+			
+			if($this->turn)
+				echo 'Player1Win!' . "\n";
+			else
+				echo 'Player2Win!' . "\n";
+				
+			$this->endGame();
+			
+			return;
+		}
+		
+		$this->turn = !$this->turn;
+		$this->playGame();
 		
 
 	}
@@ -86,7 +106,7 @@ class gameMaster
 		for($i = 0; $i < $this->digitNumber; $i++){
 			for($j = 0; $j < $this->digitNumber; $j++){
 
-				if(aNumber[$i] === $answer[$j]){
+				if($aNumber[$i] === $answer[$j]){
 					if($i === $j)
 						$eat++;
 					else
@@ -114,3 +134,6 @@ class gameMaster
 }
 
 // 以下、テストコード
+$test = new gameMaster();
+//judgeNum用
+$test->startGame(192,168);
