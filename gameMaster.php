@@ -42,7 +42,7 @@ class gameMaster
 
 	public function endGame(){
 	
-		echo "終了します。\n";
+		echo nl2br("\n終了します。");
 
 	}
 
@@ -81,7 +81,12 @@ class gameMaster
 				echo 'Player2Win!' . "\n";
 				
 			$this->endGame();
+			
+			return;
 		}
+		
+		$this->turn = !$this->turn;
+		$this->playGame();
 		
 
 	}
