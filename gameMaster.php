@@ -28,7 +28,7 @@ class gameMaster
 				$turn = false;
 		}*/
 		
-		$turn = true;
+		$this->turn = true;
 		
 	}
 
@@ -71,14 +71,14 @@ class gameMaster
 		
 		$result = $this->judgeNum($aNumber);
 		
-		echo $answer . ', ' . $result->getEat() . ', ' . $result->getBite() . "\n";
+		echo $answer . ', ' . $result->getEat() . ', ' . $result->getBite() . nl2br("\n");
 		
 		if($result->getEat() === 3){
 			
 			if($this->turn)
-				echo 'Player1Win!' . "\n";
+				echo 'Player1Win!' . nl2br("\n");
 			else
-				echo 'Player2Win!' . "\n";
+				echo 'Player2Win!' . nl2br("\n");
 				
 			$this->endGame();
 			
