@@ -45,33 +45,41 @@ class gameMaster
 		echo nl2br("\n終了します。");
 
 	}
+	
+	public function divideNumber($number, $digit){
+	
+		// 数値を分ける
+		for($i = 0; $i < $digit; $i++){
+			
+			$aNumber[] = ($number % 10);
+			$number /= 10;
+		
+		}
+		
+		// 配列の前後を入れ替える
+		for($i = 0; $i < $digit / 2; $i++){
+		
+			$temp = $aNumber[$i];
+			$aNumber[$i] = $aNumber[$digit - 1 - $i];
+			$aNumber[$digit - 1 - $i] = $temp;
+			
+		}
+		
+		return $aNumber;
+	
+	}
 
 	public function playGame(){
 		
 		//TODO:入力待ちの処理
 		$answer = 192;
-		$inputNumber = $answer;
 		
-		// 数値を分ける
-		for($i = 0; $i < $this->digitNumber; $i++){
-			
-			$aNumber[] = ($inputNumber % 10);
-			$inputNumber /= 10;
-		
-		}
-		
-		// 配列の前後を入れ替える
-		for($i = 0; $i < $this->digitNumber / 2; $i++){
-		
-			$temp = $aNumber[$i];
-			$aNumber[$i] = $aNumber[$this->digitNumber - 1 - $i];
-			$aNumber[$this->digitNumber - 1 - $i] = $temp;
-			
-		}
+		$aNumber = $this->divideNumber($answer, $this->digitNumber);
 		
 		$result = $this->judgeNum($aNumber);
 		
-		echo $answer . ', ' . $result->getEat() . ', ' . $result->getBite() . nl2br("\n");
+		echo $answer . ', ' . $result->getEat() . ', ' 
+			. $result->getBite() . nl2br("\n");
 		
 		if($result->getEat() === 3){
 			
