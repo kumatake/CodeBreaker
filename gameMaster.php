@@ -31,13 +31,25 @@ class gameMaster
 		$this->turn = true;
 		
 	}
-
-	public function startGame($p1Num, $p2Num){
-		$this->player1 = new Player(3);
-		$this->player2 = new Player(3);
-		$this->player1->setNumber($p1Num);
-		$this->player2->setNumber($p2Num);
+	
+	public function player1Set($num){
+		
+		$this->player1 = new Player($this->digitNumber);
+		$this->player1->setNumber($num);
+	
+	}
+	
+	public function player2Set($num){
+		
+		$this->player2 = new Player($this->digitNumber);
+		$this->player2->setNumber($num);
+	
+	}
+	
+	public function startGame(){
+	
 		$this->playGame();
+	
 	}
 
 	public function endGame(){
@@ -69,17 +81,21 @@ class gameMaster
 	
 	}
 
-	public function playGame(){
-		
-		//TODO:入力待ちの処理
-		$answer = 192;
+	public function playGame($answer){
 		
 		$aNumber = $this->divideNumber($answer, $this->digitNumber);
 		
 		$result = $this->judgeNum($aNumber);
 		
-		echo $answer . ', ' . $result->getEat() . ', ' 
-			. $result->getBite() . nl2br("\n");
+		$resultText = $answer . ' ' . $result->getEat() . 'EAT ' 
+			. $result->getBite() . nl2br("BITE\n");
+		
+		echo $resultText;
+		
+		if($this->turn)
+			$this->player1->addHistory($resultText);
+		else
+			$this->player2->addHistory($resultText);
 		
 		if($result->getEat() === 3){
 			
@@ -94,9 +110,23 @@ class gameMaster
 		}
 		
 		$this->turn = !$this->turn;
-		$this->playGame();
 		
 
+	}
+	
+	public function readHistory(){
+	
+		if($this->turn)
+			$history = $this->player1->getHistory();
+		else
+			$history = $this->player2->getHistory();
+			
+		for($history as $output){
+		
+			echo nl2br($history);
+		
+		}
+		
 	}
 
 	// 正誤判定
@@ -142,8 +172,7 @@ class gameMaster
 }
 
 // 以下、テストコード
-$test = new gameMaster();
+//$test = new gameMaster();
 //judgeNum用
-$test->startGame(192,168);
 
 ?>
