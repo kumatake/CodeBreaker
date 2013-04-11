@@ -1,4 +1,4 @@
-<?
+<?php
 
 require("eatBite.php");
 //require("matchPlayer.php");
@@ -145,3 +145,5 @@ class gameMaster
 $test = new gameMaster();
 //judgeNum用
 $test->startGame(192,168);
+
+?>

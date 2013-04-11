@@ -1,4 +1,4 @@
-<?
+<?php
 
 class player
 {
@@ -75,3 +75,5 @@ var_dump($player1->getNumber());
 var_dump($player2->getNumber());
 var_dump($player1->getHistory());
 var_dump($player2->getHistory());*/
+
+?>

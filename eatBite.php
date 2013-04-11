@@ -1,4 +1,4 @@
-<?
+<?php
 
 class eatBite
 {
@@ -48,3 +48,5 @@ $eb->setBite(2);
 
 echo 'EAT:' . $eb->getEat() . ' BITE:' . $eb->getBite();
 */
+
+?>

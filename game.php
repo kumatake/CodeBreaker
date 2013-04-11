@@ -11,7 +11,7 @@
 
 <div id="pset1">
 <p>P1の数列を入力してください</p>
-<form action="" method="post">
+<form action="./gameMaster.php" method="post">
 <input type="text" name="setnum1" />
 <input type="submit" name="set1" value="OK" /> 
 </form>
@@ -19,7 +19,12 @@
 
 <div id="pset2" style="display:none">
 <p>P2の数列を入力してください</p>
-<form action="" method="post">
+<form action="
+<?php 
+require('gameMaster.php');
+$master = new gameMaster();
+$master->startGame();
+ ?>" method="post">
 <input type="text" name="setnum2" />
 <input type="submit" name="set2" value="OK" />
 </form>
