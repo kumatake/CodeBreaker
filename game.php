@@ -4,21 +4,19 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>ゲームプレイ</title>
 <script type="application/javascript" src="js/jquery.js"></script>
-
-</head>
-
 <?php
 include('gameMaster.php'); 
 $f = file_get_contents('gameM');
 $a = unserialize($f);
 
 //処理書く
-if(isset($_POST['set1'])){
-	$a->player1set($_POST['setnum1']);
-	echo $a->player1->getNumber();
+if($_POST['set1']){
+	$a->player1set($_POST['setnum']);
+	
+	echo $_POST['setnum'];
 }elseif(isset($_POST['set2'])){
-	$a->player2set($_POST['setnum2']);
-	echo $_POST['setnum2'];
+	$a->player2set($_POST['setnum']);
+	echo '<meta http-equiv="refresh" content="0; url=./gamePlay.php">';
 }
 
 $f = serialize($a);
@@ -26,29 +24,21 @@ file_put_contents('gameM',$f);
 
 ?>
 
+</head>
+
 <body>
 
 <div id="pset1">
-<p>P1の数列を入力してください</p>
+<p>あなたの数列を入力してください</p>
 <form action="<?php $_SERVER['PHP_SELF']; ?>" method="post">
-<input type="text" name="setnum1" />
-<input type="submit" name="set1" value="OK" /> 
-</form>
-</div>
-
-<div id="pset2" style="display:none">
-<p>P2の数列を入力してください</p>
-<form action="./gameMaster.php" method="post">
-<input type="text" name="setnum2" />
-<input type="submit" name="set2" value="OK" />
-</form>
-</div>
-
-<div id="play" style="display:none">
-<p>数列を入力してください</p>
-<form action="./gameMaster.php" method="GET" >
-<input type="text" name="text" />
-<input type="submit" name="submit" value="OK" />
+<input type="text" name="setnum" />
+<input type="submit" name=
+<?php
+ if(isset($_POST['set1'])){
+	echo "\"set2\"";
+}else{
+	echo "\"set1\"";
+}?> value="OK" /> 
 </form>
 </div>
 
