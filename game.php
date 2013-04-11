@@ -15,6 +15,10 @@ $a = unserialize($f);
 //処理書く
 if(isset($_POST['set1'])){
 	$a->player1set($_POST['setnum1']);
+	echo $a->player1->getNumber();
+}elseif(isset($_POST['set2'])){
+	$a->player2set($_POST['setnum2']);
+	echo $_POST['setnum2'];
 }
 
 $f = serialize($a);
