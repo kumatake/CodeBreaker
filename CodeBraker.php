@@ -1,40 +1,26 @@
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" href="style.css" type="text/css" media="screen" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>コードブレイカー</title>
 </head>
-
 <body>
-<header>
-<div id="header-in">
-</div>
-</header>
 
-<div id="main">
-<p>テストなう</p>
 <?php
-echo "NUM=";
-if(isset($_POST['submit'])){
+include('gameMaster.php'); 
 
-	$num = $_POST['text'];
-	++$num;
-	//echo $_POST['text'];
-	echo $num;
-}else{
-	$num = 0;
-	echo $num;
-}
+//処理書く
+$game = new gameMaster();
+
+$f = serialize($game);
+file_put_contents('gameM',$f);
+
 ?>
-<form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
-<input type="submit" name="submit" value="start">
-<input type="text" name="text" value="<? echo $num; ?>">
+
+<div>
+<p>コードブレイカーを始めます</p>
+<form action="./game.php" method="get">
+<input type="submit" name="start" value="ゲームスタート" />
 </form>
 </div>
-
-<footer>
-<div id="footer-in">
-</div>
-</footer>
 </body>
 </html>
