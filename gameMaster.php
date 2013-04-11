@@ -46,6 +46,18 @@ class gameMaster
 	
 	}
 	
+	public function player1GetNum(){
+		
+		return $this->player1->getNumber($num);
+		
+	}
+	
+	public function player2GetNum(){
+		
+		return $this->player2->getNumber($num);
+		
+	}
+	
 	public function startGame(){
 	
 		$this->playGame();
