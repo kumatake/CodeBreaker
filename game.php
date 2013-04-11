@@ -14,7 +14,7 @@ $a = unserialize($f);
 
 //処理書く
 if(isset($_POST['set1'])){
-	
+	$a->player1set($_POST['setnum1']);
 }
 
 $f = serialize($a);
