@@ -121,7 +121,7 @@ class gameMaster
 		else
 			$history = $this->player2->getHistory();
 			
-		for($history as $output){
+		foreach($history as $output){
 		
 			echo nl2br($history);
 		
