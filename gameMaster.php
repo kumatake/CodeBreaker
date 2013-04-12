@@ -58,6 +58,12 @@ class gameMaster
 		
 	}
 	
+	public function getendFlg(){
+	
+		return $this->endFlg;
+		
+	}
+	
 	public function startGame(){
 	
 		$this->playGame();
@@ -66,7 +72,13 @@ class gameMaster
 
 	public function endGame(){
 	
-		echo '<>';
+		echo '<meta http-equiv="refresh" content="3 ; URL=./gameEnd.php">';
+
+	}
+	
+	public function continueGame(){
+	
+		echo '<meta http-equiv="refresh" content="3 ; URL=./gamePlay.php">';
 
 	}
 	

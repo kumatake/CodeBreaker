@@ -21,8 +21,16 @@ $answer = $_POST['text'];
 	$a->playGame($answer);
 
  ?></p>
- <?php
- 	
- ?>	
+<?php
+ 
+ 	if($a->getendFlg())
+		$a->endGame();
+	else
+		$a->continueGame();
+		
+	$f = serialize($a);
+	file_put_contents('gameM',$f);
+	
+?>	
 </body>
 </html>
