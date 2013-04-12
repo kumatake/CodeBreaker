@@ -14,6 +14,7 @@ class gameMaster
 	private $mPlayer;		// matchPlayerクラスを格納する
 	protected $player1;		// playerクラスを格納する
 	protected $player2;		// playerクラスを格納する
+	protected $endFlg;		// 終了フラグ
 
 	public function __construct(){
 	
@@ -26,6 +27,7 @@ class gameMaster
 				$turn = false;
 		}*/
 		
+		$this->endFlg = false;
 		$this->turn = true;
 		
 	}
@@ -64,7 +66,7 @@ class gameMaster
 
 	public function endGame(){
 	
-		echo nl2br("\n終了します。");
+		echo '<>';
 
 	}
 	
@@ -113,8 +115,8 @@ class gameMaster
 				echo 'Player1Win!' . nl2br("\n");
 			else
 				echo 'Player2Win!' . nl2br("\n");
-				
-			$this->endGame();
+			
+			$this->endFlg = true;
 			
 			return;
 		}
