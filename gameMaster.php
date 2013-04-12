@@ -138,7 +138,7 @@ class gameMaster
 		
 		foreach($history as $output){
 		
-			echo nl2br($history);
+			echo nl2br($output);
 		
 		}
 		
@@ -158,7 +158,7 @@ class gameMaster
 		
 		foreach($history as $output){
 		
-			echo nl2br($history);
+			echo nl2br($output);
 		
 		}
 		
