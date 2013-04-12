@@ -10,9 +10,11 @@ $a = unserialize($f);
 //処理書く
 if(isset($_POST['set1'])){
 	$a->player1set($_POST['setnum']);
+	$a->changeTurn();
 	//echo $_POST['setnum'];
 }elseif(isset($_POST['set2'])){
 	$a->player2set($_POST['setnum']);
+	$a->changeTurn();
 	echo '<meta http-equiv="refresh" content="0; url=./gamePlay.php">';
 }
 
@@ -27,13 +29,13 @@ file_put_contents('gameM',$f);
 
 <div id="numset">
 <p><?php
-	if($a->turn){
+	if($a->getTurn()){
 		echo 'プレイヤー１';
 	}else{
 		echo 'プレイヤー２';
 	}
 ?></p>
-<p>の数列を入力してください</p>
+<p>数列を入力してください</p>
 <form action="<?php $_SERVER['PHP_SELF']; ?>" method="post">
 <input type="text" name="setnum" />
 <input type="submit" name=

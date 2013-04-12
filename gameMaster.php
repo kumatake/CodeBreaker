@@ -32,6 +32,14 @@ class gameMaster
 		
 	}
 	
+	public function getTurn(){
+		return $this->turn;
+	}
+	
+	public function changeTurn(){
+		$this->turn = !$this->turn;
+	}
+	
 	public function player1Set($num){
 		
 		$this->player1 = new Player($this->digitNumber);
