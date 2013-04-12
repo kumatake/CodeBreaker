@@ -147,7 +147,7 @@ class gameMaster
 	//player2の履歴を出力
 	public function player2History(){
 	
-		$history = $this->player1->getHistory();
+		$history = $this->player2->getHistory();
 			
 		if(count($history) === 0){
 			
