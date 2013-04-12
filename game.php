@@ -9,13 +9,17 @@ $a = unserialize($f);
 
 //処理書く
 if(isset($_POST['set1'])){
-	$a->player1set($_POST['setnum']);
-	$a->changeTurn();
+	if(!$a->checkOverlap($_POST['setnum'])){
+		$a->player1set($_POST['setnum']);
+		$a->changeTurn();
+	}
 	//echo $_POST['setnum'];
 }elseif(isset($_POST['set2'])){
-	$a->player2set($_POST['setnum']);
-	$a->changeTurn();
-	echo '<meta http-equiv="refresh" content="0; url=./gamePlay.php">';
+	if(!$a->checkOverlap($_POST['setnum'])){
+		$a->player2set($_POST['setnum']);
+		$a->changeTurn();
+		echo '<meta http-equiv="refresh" content="0; 	url=./gamePlay.php">';
+	}
 }
 
 $f = serialize($a);
@@ -40,10 +44,10 @@ file_put_contents('gameM',$f);
 <input type="password" name="setnum" maxlength="<?php echo $a->getLength(); ?>"/>
 <input type="submit" name=
 <?php
- if(isset($_POST['set1'])){
-	echo "\"set2\"";
-}else{
+if($a->getTurn()){
 	echo "\"set1\"";
+}else{
+	echo "\"set2\"";
 }?> value="OK" /> 
 </form>
 </div>

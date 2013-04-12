@@ -44,6 +44,19 @@ class gameMaster
 		$this->turn = !$this->turn;
 	}
 	
+	public function checkOverlap($num){
+		$n_array = $this->divideNumber($num,$this->digitNumber);
+		$c_array = array_count_values($n_array);
+		for($i=0;$i < count($n_array);$i++){
+			$key = $n_array[$i];
+			$count = $c_array[$key];
+			if($count > 1){
+				return true;
+			}
+		}
+		return false;
+	}
+	
 	public function player1Set($num){
 		
 		$this->player1 = new Player($this->digitNumber);
