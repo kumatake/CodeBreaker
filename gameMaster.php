@@ -133,6 +133,13 @@ class gameMaster
 		else
 			$history = $this->player2->getHistory();
 			
+		if(count($history) === 0){
+			
+			echo 'なし';
+			return;
+		
+		}
+		
 		foreach($history as $output){
 		
 			echo nl2br($history);
