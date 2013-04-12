@@ -31,7 +31,7 @@ file_put_contents('gameM',$f);
 <p>P1のコール履歴</p>
 <p>
 <?php
-	
+	$a->player1History();
  ?>
  </p>
 </div>
@@ -40,7 +40,7 @@ file_put_contents('gameM',$f);
 <p>P2のコール履歴</p>
 <p>
 <?php
-
+	$a->player2History();
 ?>
 </p>
 </div>
