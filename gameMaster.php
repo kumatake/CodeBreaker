@@ -9,8 +9,6 @@ class gameMaster
 {
 
 	private $turn;			// 手番制御用
-/*	private $number;		// 配列 数列の正誤判定用
-	private $answer;		// 配列 数列の正誤判定用*/
 	private $playFlg;		// プレイヤー数制御用
 	private $digitNumber;	//数列の桁数(現状3で固定)
 	private $mPlayer;		// matchPlayerクラスを格納する
@@ -126,12 +124,30 @@ class gameMaster
 
 	}
 	
-	public function readHistory(){
+	//player1の履歴を出力
+	public function player1History(){
 	
-		if($this->turn)
-			$history = $this->player1->getHistory();
-		else
-			$history = $this->player2->getHistory();
+		$history = $this->player1->getHistory();
+			
+		if(count($history) === 0){
+			
+			echo 'なし';
+			return;
+		
+		}
+		
+		foreach($history as $output){
+		
+			echo nl2br($history);
+		
+		}
+		
+	}
+	
+	//player2の履歴を出力
+	public function player2History(){
+	
+		$history = $this->player1->getHistory();
 			
 		if(count($history) === 0){
 			
@@ -181,10 +197,6 @@ class gameMaster
 
 		return $resultEatBite;
 
-
-	}
-
-	public function clear(){
 
 	}
 
