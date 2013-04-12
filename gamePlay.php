@@ -29,7 +29,7 @@ file_put_contents('gameM',$f);
 <div id="his">
 <p>コール履歴</p>
 <?php
-
+	
  ?>
 </div>
 </body>
