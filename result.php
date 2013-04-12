@@ -10,7 +10,7 @@ $f = file_get_contents('gameM');
 $a = unserialize($f);
 
 //処理書く
-$answer = $_POST['text'];
+$answer = $_POST['answer'];
 ?>
 
 </head>
