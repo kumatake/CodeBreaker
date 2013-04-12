@@ -26,11 +26,24 @@ file_put_contents('gameM',$f);
 <input type="submit" name="call" value="コール" />
 </form>
 </div>
-<div id="his">
-<p>コール履歴</p>
+<div id="his" style="height:auto; width:600px;">
+<div id="myhis" style="height:auto; width:300px; float:left;">
+<p>P1のコール履歴</p>
+<p>
 <?php
 	
  ?>
+ </p>
+</div>
+
+<div id="enhis" style="height:auto; width:300px; float:left;">
+<p>P2のコール履歴</p>
+<p>
+<?php
+
+?>
+</p>
+</div>
 </div>
 </body>
 </html>
