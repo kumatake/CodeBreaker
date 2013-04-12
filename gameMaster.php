@@ -97,13 +97,13 @@ class gameMaster
 
 	public function endGame(){
 	
-		echo '<meta http-equiv="refresh" content="3 ; URL=./gameEnd.php">';
+		echo '<meta http-equiv="refresh" content="2 ; URL=./gameEnd.php">';
 
 	}
 	
 	public function continueGame(){
 	
-		echo '<meta http-equiv="refresh" content="3 ; URL=./gamePlay.php">';
+		echo '<meta http-equiv="refresh" content="2 ; URL=./gamePlay.php">';
 
 	}
 	
