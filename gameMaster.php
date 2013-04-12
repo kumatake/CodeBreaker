@@ -10,7 +10,7 @@ class gameMaster
 
 	protected $turn;			// 手番制御用
 	private $playFlg;		// プレイヤー数制御用
-	private $digitNumber;	//数列の桁数(現状3で固定)
+	protected $digitNumber;	//数列の桁数(現状3で固定)
 	private $mPlayer;		// matchPlayerクラスを格納する
 	protected $player1;		// playerクラスを格納する
 	protected $player2;		// playerクラスを格納する
@@ -30,6 +30,10 @@ class gameMaster
 		$this->endFlg = false;
 		$this->turn = true;
 		
+	}
+	
+	public function getLength(){
+		return $this->digitNumber;
 	}
 	
 	public function getTurn(){

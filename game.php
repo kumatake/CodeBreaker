@@ -37,7 +37,7 @@ file_put_contents('gameM',$f);
 ?></p>
 <p>数列を入力してください</p>
 <form action="<?php $_SERVER['PHP_SELF']; ?>" method="post">
-<input type="text" name="setnum" />
+<input type="password" name="setnum" maxlength="<?php echo $a->getLength(); ?>"/>
 <input type="submit" name=
 <?php
  if(isset($_POST['set1'])){

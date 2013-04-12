@@ -21,7 +21,7 @@ file_put_contents('gameM',$f);
 <div id="main">
 <p>相手の数列の予想を入力してください</p>
 <form action="./result.php" method="post">
-<input type="text" name="answer" />
+<input type="text" name="answer" maxlength="<?php echo $a->getLength(); ?>"/>
 <input type="submit" name="call" value="コール" />
 </form>
 </div>
