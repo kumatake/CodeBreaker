@@ -8,7 +8,7 @@ require("player.php");
 class gameMaster
 {
 
-	private $turn;			// 手番制御用
+	protected $turn;			// 手番制御用
 	private $playFlg;		// プレイヤー数制御用
 	private $digitNumber;	//数列の桁数(現状3で固定)
 	private $mPlayer;		// matchPlayerクラスを格納する

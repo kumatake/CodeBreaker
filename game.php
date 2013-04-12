@@ -3,7 +3,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>ゲームプレイ</title>
 <?php
-include('gameMaster.php'); 
+require_once('gameMaster.php'); 
 $f = file_get_contents('gameM');
 $a = unserialize($f);
 
@@ -26,7 +26,14 @@ file_put_contents('gameM',$f);
 <body>
 
 <div id="numset">
-<p>あなたの数列を入力してください</p>
+<p><?php
+	if($a->turn){
+		echo 'プレイヤー１';
+	}else{
+		echo 'プレイヤー２';
+	}
+?></p>
+<p>の数列を入力してください</p>
 <form action="<?php $_SERVER['PHP_SELF']; ?>" method="post">
 <input type="text" name="setnum" />
 <input type="submit" name=

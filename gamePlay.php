@@ -3,7 +3,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>コードブレイカー</title>
 <?php
-include('gameMaster.php'); 
+require_once('gameMaster.php'); 
 $f = file_get_contents('gameM');
 $a = unserialize($f);
 

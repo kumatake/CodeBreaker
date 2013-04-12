@@ -7,7 +7,7 @@
 <body>
 
 <?php
-include('gameMaster.php'); 
+require_once('gameMaster.php'); 
 
 //処理書く
 $game = new gameMaster();
