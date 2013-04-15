@@ -19,17 +19,20 @@ class gameMaster
 	public function __construct(){
 	
 		$this->digitNumber = 3;
-/*		$this->mPlayer = new matchPlayer();
-		if($mPlayer->match()){
-			if(mt_rand(0, 1))
-				$turn = true;
-			else
-				$turn = false;
-		}*/
+
 		
 		$this->endFlg = false;
 		$this->turn = true;
 		
+	}
+	
+	public function randTurn(){
+		
+		if(mt_rand(0,1))
+			$this->turn = 0;
+		else
+			$this->turn = 1;
+			
 	}
 	
 	public function getLength(){
