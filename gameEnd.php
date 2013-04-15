@@ -7,7 +7,7 @@
 
 <body>
 <p>おしまい！！</p>
-<form action="./CodeBraker.php">
+<form action="./index.php">
 <input type="submit" name="back" value="ゲームトップへ"/>
 </form>
 </body>
