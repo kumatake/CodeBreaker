@@ -21,6 +21,7 @@ if(isset($_POST['set1'])){
 	if(!$a->checkOverlap($_POST['setnum'])){
 		$a->player2set($_POST['setnum']);
 		$a->changeTurn();
+		$a->randTurn();
 		echo '<meta http-equiv="refresh" content="0; 	url=./gamePlay.php">';
 	}else{
 		$numFlg = true;
