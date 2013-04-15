@@ -6,12 +6,15 @@
 require_once('gameMaster.php'); 
 $f = file_get_contents('gameM');
 $a = unserialize($f);
+$numFlg = false;
 
 //処理書く
 if(isset($_POST['set1'])){
 	if(!$a->checkOverlap($_POST['setnum'])){
 		$a->player1set($_POST['setnum']);
 		$a->changeTurn();
+	}else{
+		$numFlg = true;
 	}
 	//echo $_POST['setnum'];
 }elseif(isset($_POST['set2'])){
@@ -19,6 +22,8 @@ if(isset($_POST['set1'])){
 		$a->player2set($_POST['setnum']);
 		$a->changeTurn();
 		echo '<meta http-equiv="refresh" content="0; 	url=./gamePlay.php">';
+	}else{
+		$numFlg = true;
 	}
 }
 
@@ -32,6 +37,11 @@ file_put_contents('gameM',$f);
 <body>
 
 <div id="numset">
+<p><?php
+	if($numFlg){
+		echo '数字が重複しています。入力しなおしてください。';
+	}
+?></p>
 <p><?php
 	if($a->getTurn()){
 		echo 'プレイヤー１';
