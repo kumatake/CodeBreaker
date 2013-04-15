@@ -10,6 +10,7 @@ $f = file_get_contents('gameM');
 $a = unserialize($f);
 
 //処理書く
+
 $answer = $_POST['answer'];
 ?>
 
@@ -17,9 +18,11 @@ $answer = $_POST['answer'];
 
 <body>
 <p><?php
-
-	$a->playGame($answer);
-
+	if(!$a->checkOverlap($answer)){
+		$a->playGame($answer);	
+	}else{
+		echo '数字が重複しています。入力しなおしてください。';
+	}
  ?></p>
 <?php
  

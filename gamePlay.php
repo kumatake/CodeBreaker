@@ -8,14 +8,6 @@ $f = file_get_contents('gameM');
 $a = unserialize($f);
 $numFlg = false;
 
-//処理書く
-if(isset($_POST['call'])){
-	if(!$a->checkOverlap($_POST['answer'])){
-		$a->playGame($_POST['answer']);
-	}else{
-		$numFlg = true;
-	}
-}
 $f = serialize($a);
 file_put_contents('gameM',$f);
 
@@ -24,11 +16,6 @@ file_put_contents('gameM',$f);
 
 <body>
 <div id="main">
-<p><?php
-	if($numFlg){
-		echo '数字が重複しています。入力しなおしてください。';
-	}
-?></p>
 <p><?php
 	if($a->getTurn()){
 		echo 'プレイヤー１のターン';
