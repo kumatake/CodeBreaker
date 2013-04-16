@@ -18,7 +18,7 @@ class gameMaster
 
 	public function __construct(){
 	
-		$this->digitNumber = 3;
+		$this->digitNumber = 0;
 
 		
 		$this->endFlg = false;
@@ -33,6 +33,10 @@ class gameMaster
 		else
 			$this->turn = 1;
 			
+	}
+	
+	public function setLength($digit){
+		$this->digitNumber = $digit;
 	}
 	
 	public function getLength(){
