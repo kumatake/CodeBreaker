@@ -48,7 +48,7 @@ class gameMaster
 	}
 	
 	public function checkOverlap($num){
-		$n_array = $this->divideNumber($num,$this->digitNumber);
+		$n_array = $this->divideNumber($num);
 		$c_array = array_count_values($n_array);
 		for($i=0;$i < count($n_array);$i++){
 			$key = $n_array[$i];
@@ -110,22 +110,25 @@ class gameMaster
 
 	}
 	
-	public function divideNumber($number, $digit){
+	public function divideNumber($number){
 	
 		// 数値を分ける
-		for($i = 0; $i < $digit; $i++){
+		do{
 			
 			$aNumber[] = ($number % 10);
-			$number /= 10;
+			$number = floor( $number / 10);
 		
-		}
+		}while($number != 0);
+		 
+		
+		$m = count($aNumber);
 		
 		// 配列の前後を入れ替える
-		for($i = 0; $i < $digit / 2; $i++){
+		for($i = 0; $i < $m / 2; $i++){
 		
 			$temp = $aNumber[$i];
-			$aNumber[$i] = $aNumber[$digit - 1 - $i];
-			$aNumber[$digit - 1 - $i] = $temp;
+			$aNumber[$i] = $aNumber[$m - 1 - $i];
+			$aNumber[$m - 1 - $i] = $temp;
 			
 		}
 		
@@ -135,7 +138,7 @@ class gameMaster
 
 	public function playGame($answer){
 		
-		$aNumber = $this->divideNumber($answer, $this->digitNumber);
+		$aNumber = $this->divideNumber($answer);
 		
 		$result = $this->judgeNum($aNumber);
 		

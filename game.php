@@ -6,26 +6,45 @@
 require_once('gameMaster.php'); 
 $f = file_get_contents('gameM');
 $a = unserialize($f);
-$numFlg = false;
+$numFlg = 0;
 
 //処理書く
 if(isset($_POST['set1'])){
-	if(!$a->checkOverlap($_POST['setnum'])){
+	
+	if(count($a->divideNumber($_POST['setnum'])) !== $a->getLength()){
+		
+		$numFlg = 1;
+		
+	}else if($a->checkOverlap($_POST['setnum'])){
+		
+		$numFlg = 2;
+		
+	}else{
+		
 		$a->player1set($_POST['setnum']);
 		$a->changeTurn();
-	}else{
-		$numFlg = true;
+		
 	}
 	//echo $_POST['setnum'];
 }elseif(isset($_POST['set2'])){
-	if(!$a->checkOverlap($_POST['setnum'])){
+	
+	if(count($a->divideNumber($_POST['setnum'])) !== $a->getLength()){
+		
+		$numFlg = 1;
+		
+	}else if($a->checkOverlap($_POST['setnum'])){
+		
+		$numFlg = 2;
+		
+	}else{
+		
 		$a->player2set($_POST['setnum']);
 		$a->changeTurn();
 		$a->randTurn();
 		echo '<meta http-equiv="refresh" content="0; 	url=./gamePlay.php">';
-	}else{
-		$numFlg = true;
+		
 	}
+	
 }
 
 $f = serialize($a);
@@ -39,7 +58,11 @@ file_put_contents('gameM',$f);
 
 <div id="numset">
 <p><?php
-	if($numFlg){
+	if($numFlg === 1){
+		
+		echo '<font size="5" color="#FF0000"><b>入力された桁数が正しくありません。入力しなおしてください。</b></font>';
+		
+	} else if($numFlg === 2){
 		echo '<font size="5" color="#FF0000"><b>数字が重複しています。入力しなおしてください。</b></font>';
 	}
 ?></p>

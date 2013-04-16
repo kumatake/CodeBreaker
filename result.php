@@ -18,10 +18,19 @@ $answer = $_POST['answer'];
 
 <body>
 <p><?php
-	if(!$a->checkOverlap($answer)){
-		$a->playGame($answer);	
+	if(count($a->divideNumber($answer)) !== $a->getLength()){
+		
+		echo '<font size="5" color="#FF0000"><b>入力された桁数が正しくありません。入力しなおしてください。</b></font>';
+	
+	}else if($a->checkOverlap($answer)){
+		
+				echo '<font size="5" color="#FF0000"><b>数字が重複しています。入力しなおしてください。</b></font>';
+		
+		
 	}else{
-		echo '<font size="5" color="#FF0000"><b>数字が重複しています。入力しなおしてください。</b></font>';
+		
+		$a->playGame($answer);	
+
 	}
  ?></p>
 <?php
