@@ -40,7 +40,7 @@ file_put_contents('gameM',$f);
 <div id="numset">
 <p><?php
 	if($numFlg){
-		echo '数字が重複しています。入力しなおしてください。';
+		echo '<font size="5" color="#FF0000"><b>数字が重複しています。入力しなおしてください。</b></font>';
 	}
 ?></p>
 <p><?php

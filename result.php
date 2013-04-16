@@ -21,7 +21,7 @@ $answer = $_POST['answer'];
 	if(!$a->checkOverlap($answer)){
 		$a->playGame($answer);	
 	}else{
-		echo '数字が重複しています。入力しなおしてください。';
+		echo '<font size="5" color="#FF0000"><b>数字が重複しています。入力しなおしてください。</b></font>';
 	}
  ?></p>
 <?php
