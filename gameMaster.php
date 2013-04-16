@@ -18,7 +18,7 @@ class gameMaster
 
 	public function __construct(){
 	
-		$this->digitNumber = 0;
+		$this->digitNumber = 3;
 
 		
 		$this->endFlg = false;
