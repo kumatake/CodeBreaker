@@ -13,7 +13,6 @@ if(isset($_POST['setdigit'])){
 		$a->setLength($_POST['setdigit']);
 	}
 }
-echo $a->getLength();
 //処理書く
 if(isset($_POST['set1'])){
 	
