@@ -18,7 +18,7 @@ class gameMaster
 
 	public function __construct(){
 	
-		$this->digitNumber = 3;
+		$this->digitNumber = 0;
 
 		
 		$this->endFlg = false;
@@ -156,7 +156,7 @@ class gameMaster
 		else
 			$this->player2->addHistory($resultText);
 		
-		if($result->getEat() === 3){
+		if($result->getEat() === $this->digitNumber){
 			
 			if($this->turn)
 				echo 'Player1Win!' . nl2br("\n");
