@@ -36,7 +36,7 @@ class gameMaster
 	}
 	
 	public function setLength($digit){
-		$this->digitNumber = $digit;
+		$this->digitNumber = (int)$digit;
 	}
 	
 	public function getLength(){

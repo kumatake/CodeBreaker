@@ -8,8 +8,12 @@ $f = file_get_contents('gameM');
 $a = unserialize($f);
 $numFlg = 0;
 
-if($a->getLength() == 0)	$a->setLength($_POST['setdigit']);
-
+if(isset($_POST['setdigit'])){
+	if($a->getLength() == 0){
+		$a->setLength($_POST['setdigit']);
+	}
+}
+echo $a->getLength();
 //処理書く
 if(isset($_POST['set1'])){
 	
