@@ -2,6 +2,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>コードブレイカー</title>
+
 <?php
 require_once('gameMaster.php'); 
 $f = file_get_contents('gameM');
@@ -25,7 +26,7 @@ file_put_contents('gameM',$f);
 ?></p>
 <p>相手の数列の予想を入力してください</p>
 <form action="./result.php" method="post">
-<input type="text" name="answer" maxlength="<?php echo $a->getLength(); ?>"/>
+<input type="text" name="answer" maxlength="<?php echo $a->getLength(); ?>" autocomplete="off"/>
 <input type="submit" name="call" value="コール" />
 </form>
 </div>
