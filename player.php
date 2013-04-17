@@ -18,23 +18,7 @@ class player
 	// 引数の数値を一つずつ配列に入れるメソッド
 	public function setNumber($inputNumber){
 		
-		
-		// 数値を分ける
-		for($i = 0; $i < $this->digitNumber; $i++){
-			
-			$this->number[] = ($inputNumber % 10);
-			$inputNumber /= 10;
-		
-		}
-		
-		// 配列の前後を入れ替える
-		for($i = 0; $i < $this->digitNumber / 2; $i++){
-		
-			$temp = $this->number[$i];
-			$this->number[$i] = $this->number[ $this->digitNumber - 1 - $i];
-			$this->number[ $this->digitNumber - 1 - $i] = $temp;
-			
-		}
+		$this->number = $inputNumber;
 		
 	}
 	
@@ -62,6 +46,11 @@ class player
 } 
 
 //以下、テストコード
+//$player1 = new player(3);
+//$player1->setNumber(array(1,2,3));
+//var_dump($player1->getNumber());
+
+
 /*$player1 = new player(3);
 $player2 = new player(3);
 
