@@ -1,8 +1,8 @@
 <?php
 
-require("eatBite.php");
+require_once("eatBite.php");
 //require("matchPlayer.php");
-require("player.php");
+require_once("player.php");
 
 
 class gameMaster
@@ -52,7 +52,7 @@ class gameMaster
 	}
 	
 	public function checkOverlap($num){
-		$n_array = $this->divideNumber($num);
+		$n_array = $num;
 		$c_array = array_count_values($n_array);
 		for($i=0;$i < count($n_array);$i++){
 			$key = $n_array[$i];
@@ -142,7 +142,7 @@ class gameMaster
 
 	public function playGame($answer){
 		
-		$aNumber = $this->divideNumber($answer);
+		$aNumber = $answer;
 		
 		$result = $this->judgeNum($aNumber);
 		
