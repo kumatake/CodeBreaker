@@ -18,9 +18,7 @@ if(isset($_POST['setdigit'])){
 if(isset($_POST['set1'])){
 	for($j=0;$j<$a->getLength();$j++){
 		$setnum[] = (int)$_POST[$j];
-		echo $_POST[$j];
 	}
-	var_dump($setnum);
 	if(count($setnum) !== $a->getLength()){
 		
 		$numFlg = 1;
