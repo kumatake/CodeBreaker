@@ -7,7 +7,7 @@ require_once('gameMaster.php');
 $f = file_get_contents('gameM');
 $a = unserialize($f);
 $numFlg = 0;
-$setnum;
+$setnum = array();
 
 if(isset($_POST['setdigit'])){
 	if($a->getLength() == 0){
@@ -16,8 +16,11 @@ if(isset($_POST['setdigit'])){
 }
 //処理書く
 if(isset($_POST['set1'])){
+	
 	for($j=0;$j<$a->getLength();$j++){
-		$setnum[] = (int)$_POST[$j];
+		
+		if($_POST[$j] != '')
+			$setnum[] = (int)$_POST[$j];
 	}
 	var_dump($setnum);
 	if(count($setnum) !== $a->getLength()){
@@ -35,9 +38,11 @@ if(isset($_POST['set1'])){
 		
 	}
 }elseif(isset($_POST['set2'])){
+	
 	for($j=0;$j<$a->getLength();$j++){
-		$setnum[] = (int)$_POST[$j];
-		echo $_POST[$j];
+		
+		if($_POST[$j] != '')
+			$setnum[] = (int)$_POST[$j];
 	}
 	if(count($setnum) !== $a->getLength()){
 		
