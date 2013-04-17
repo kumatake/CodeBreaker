@@ -11,14 +11,18 @@ $a = unserialize($f);
 
 //処理書く
 
-$answer = $_POST['answer'];
+for($j=0;$j<$a->getLength();$j++){
+		$answer[] = (int)$_POST[$j];
+	
+	}
 ?>
 
 </head>
 
 <body>
 <p><?php
-	if(count($a->divideNumber($answer)) !== $a->getLength()){
+
+	if(count($answer) !== $a->getLength()){
 		
 		echo '<font size="5" color="#FF0000"><b>入力された桁数が正しくありません。入力しなおしてください。</b></font>';
 	

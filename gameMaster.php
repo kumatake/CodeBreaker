@@ -146,7 +146,12 @@ class gameMaster
 		
 		$result = $this->judgeNum($aNumber);
 		
-		$resultText = $answer . ' ' . $result->getEat() . 'EAT ' 
+		$resultText = '';
+		
+		foreach($aNumber as $a)
+			$resultText .= $a;
+		
+		$resultText .= ' ' . $result->getEat() . 'EAT ' 
 			. $result->getBite() . nl2br("BITE\n");
 		
 		echo $resultText;
