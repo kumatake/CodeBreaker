@@ -21,34 +21,37 @@ if(isset($_POST['set1'])){
 		echo $_POST[$j];
 	}
 	var_dump($setnum);
-	if(count($a->divideNumber($_POST['setnum'])) !== $a->getLength()){
+	if(count($setnum) !== $a->getLength()){
 		
 		$numFlg = 1;
 		
-	}else if($a->checkOverlap($_POST['setnum'])){
+	}else if($a->checkOverlap($setnum)){
 		
 		$numFlg = 2;
 		
 	}else{
 		
-		$a->player1set($_POST['setnum']);
+		$a->player1set($setnum);
 		$a->changeTurn();
 		
 	}
 	//echo $_POST['setnum'];
 }elseif(isset($_POST['set2'])){
-	
-	if(count($a->divideNumber($_POST['setnum'])) !== $a->getLength()){
+	for($j=0;$j<$a->getLength();$j++){
+		$setnum[] = (int)$_POST[$j];
+		echo $_POST[$j];
+	}
+	if(count($setnum) !== $a->getLength()){
 		
 		$numFlg = 1;
 		
-	}else if($a->checkOverlap($_POST['setnum'])){
+	}else if($a->checkOverlap($setnum)){
 		
 		$numFlg = 2;
 		
 	}else{
 		
-		$a->player2set($_POST['setnum']);
+		$a->player2set($setnum);
 		$a->changeTurn();
 		$a->randTurn();
 		echo '<meta http-equiv="refresh" content="0; 	url=./gamePlay.php">';
