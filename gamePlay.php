@@ -26,7 +26,24 @@ file_put_contents('gameM',$f);
 ?></p>
 <p>相手の数列の予想を入力してください</p>
 <form action="./result.php" method="post">
-<input type="text" name="answer" maxlength="<?php echo $a->getLength(); ?>" autocomplete="off"/>
+
+<?php
+for($i=0;$i<$a->getLength();$i++){
+	echo "<select name='$i'>
+<option value='0' selected>0</option>
+<option value='1'>1</option>
+<option value='2'>2</option>
+<option value='3'>3</option>
+<option value='4'>4</option>
+<option value='5'>5</option>
+<option value='6'>6</option>
+<option value='7'>7</option>
+<option value='8'>8</option>
+<option value='9'>9</option>
+</select>";
+}
+?>
+
 <input type="submit" name="call" value="コール" />
 </form>
 </div>

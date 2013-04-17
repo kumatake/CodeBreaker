@@ -7,6 +7,7 @@ require_once('gameMaster.php');
 $f = file_get_contents('gameM');
 $a = unserialize($f);
 $numFlg = 0;
+$setnum;
 
 if(isset($_POST['setdigit'])){
 	if($a->getLength() == 0){
@@ -15,7 +16,11 @@ if(isset($_POST['setdigit'])){
 }
 //処理書く
 if(isset($_POST['set1'])){
-	
+	for($j=0;$j<$a->getLength();$j++){
+		$setnum[] = (int)$_POST[$j];
+		echo $_POST[$j];
+	}
+	var_dump($setnum);
 	if(count($a->divideNumber($_POST['setnum'])) !== $a->getLength()){
 		
 		$numFlg = 1;
@@ -80,7 +85,24 @@ file_put_contents('gameM',$f);
 ?></p>
 <p>数列を入力してください</p>
 <form action="<?php $_SERVER['PHP_SELF']; ?>" method="post">
-<input type="password" name="setnum" maxlength="<?php echo $a->getLength(); ?>"/>
+
+<?php
+for($i=0;$i<$a->getLength();$i++){
+	echo "<select name='$i'>
+<option value='0' selected>0</option>
+<option value='1'>1</option>
+<option value='2'>2</option>
+<option value='3'>3</option>
+<option value='4'>4</option>
+<option value='5'>5</option>
+<option value='6'>6</option>
+<option value='7'>7</option>
+<option value='8'>8</option>
+<option value='9'>9</option>
+</select>";
+}
+?>
+
 <input type="submit" name=
 <?php
 if($a->getTurn()){
