@@ -19,6 +19,7 @@ if(isset($_POST['set1'])){
 	for($j=0;$j<$a->getLength();$j++){
 		$setnum[] = (int)$_POST[$j];
 	}
+	var_dump($setnum);
 	if(count($setnum) !== $a->getLength()){
 		
 		$numFlg = 1;
@@ -33,7 +34,6 @@ if(isset($_POST['set1'])){
 		$a->changeTurn();
 		
 	}
-	//echo $_POST['setnum'];
 }elseif(isset($_POST['set2'])){
 	for($j=0;$j<$a->getLength();$j++){
 		$setnum[] = (int)$_POST[$j];
@@ -89,18 +89,7 @@ file_put_contents('gameM',$f);
 
 <?php
 for($i=0;$i<$a->getLength();$i++){
-	echo "<select name='$i'>
-<option value='0' selected>0</option>
-<option value='1'>1</option>
-<option value='2'>2</option>
-<option value='3'>3</option>
-<option value='4'>4</option>
-<option value='5'>5</option>
-<option value='6'>6</option>
-<option value='7'>7</option>
-<option value='8'>8</option>
-<option value='9'>9</option>
-</select>";
+	echo "<input type='password' name='$i' maxlength='1' size='1'>";
 }
 ?>
 
