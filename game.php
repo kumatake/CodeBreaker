@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>ゲームプレイ</title>
@@ -10,9 +11,9 @@ $numFlg = 0;
 $setnum = array();
 
 if(isset($_POST['setdigit'])){
-	if($a->getLength() == 0){
+	
 		$a->setLength($_POST['setdigit']);
-	}
+	
 }
 //処理書く
 if(isset($_POST['set1'])){
