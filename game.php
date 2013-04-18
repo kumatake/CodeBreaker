@@ -73,6 +73,10 @@ file_put_contents('gameM',$f);
 
 <body>
 
+<header>
+	<h1 id="index-title">Code Breaker</h1>
+</header>
+
 <div id="main">
 <p><?php
 	if($numFlg === 1){

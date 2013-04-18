@@ -2,6 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
+<link rel="stylesheet" href="./style.css" type="text/css" media="screen" />
 <title>コードブレイカー</title>
 
 <?php
@@ -20,6 +21,7 @@ for($j=0;$j<$a->getLength();$j++){
 </head>
 
 <body>
+<div id="main">
 <p><?php
 
 	if(count($answer) !== $a->getLength()){
@@ -48,5 +50,6 @@ for($j=0;$j<$a->getLength();$j++){
 	file_put_contents('gameM',$f);
 	
 ?>	
+</div>
 </body>
 </html>

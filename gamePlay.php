@@ -2,6 +2,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="./style.css" type="text/css" media="screen" />
 <title>コードブレイカー</title>
 
 <?php
@@ -17,6 +18,10 @@ file_put_contents('gameM',$f);
 </head>
 
 <body>
+<header>
+	<h1 id="index-title">Code Breaker</h1>
+</header>
+
 <div id="main">
 <p><?php
 	if($a->getTurn()){
