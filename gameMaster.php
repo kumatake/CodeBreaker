@@ -152,9 +152,9 @@ class gameMaster
 			$resultText .= $a;
 		
 		$resultText .= ' ' . $result->getEat() . 'EAT ' 
-			. $result->getBite() . nl2br("BITE\n");
+			. $result->getBite() . "BITE";
 		
-		echo $resultText;
+		echo '<font size="6">' . $resultText . '</font>';
 		
 		if($this->turn)
 			$this->player1->addHistory($resultText);
@@ -164,9 +164,9 @@ class gameMaster
 		if($result->getEat() === $this->digitNumber){
 			
 			if($this->turn)
-				echo '<font color="#FF0000" size="5">Player1Win!</font>' . nl2br("\n");
+				echo '<font color="#FF0000" size="7">Player1Win!</font>' . nl2br("\n");
 			else
-				echo '<font color="#FF0000" size="5">Player2Win!</font>' . nl2br("\n");
+				echo '<font color="#FF0000" size="7">Player2Win!</font>' . nl2br("\n");
 			
 			$this->endFlg = true;
 			
@@ -192,7 +192,7 @@ class gameMaster
 		
 		foreach($history as $output){
 		
-			echo nl2br($output);
+			echo $output . '</BR>';
 		
 		}
 		
@@ -212,7 +212,7 @@ class gameMaster
 		
 		foreach($history as $output){
 		
-			echo nl2br($output);
+			echo $output . '</BR>';
 		
 		}
 		

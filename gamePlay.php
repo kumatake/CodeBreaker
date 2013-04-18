@@ -57,21 +57,25 @@ for($i=0;$i<$a->getLength();$i++){
 <div id="his" style="height:auto; width:600px;">
 
 <div id="myhis" style="height:auto; width:300px; float:left;">
-<p>P1のコール履歴</p>
-<p>
-<?php
-	$a->player1History();
- ?>
-</p>
+	<p>P1のコール履歴</p>
+	<div class="history">
+	<p>
+		<?php
+			$a->player1History();
+		?>
+		</p>
+	</div>
 </div>
 
 <div id="enhis" style="height:auto; width:300px; float:left;">
-<p>P2のコール履歴</p>
-<p>
-<?php
-	$a->player2History();
-?>
-</p>
+	<p>P2のコール履歴</p>
+	<div class="history">
+	<p>
+		<?php
+			$a->player2History();
+		?>
+		</p>
+	</div>
 </div>
 
 </div>
