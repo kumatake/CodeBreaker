@@ -2,6 +2,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="./style.css" type="text/css" media="screen" />
 <title>ゲームプレイ</title>
 <?php
 require_once('gameMaster.php'); 
@@ -72,7 +73,7 @@ file_put_contents('gameM',$f);
 
 <body>
 
-<div id="numset">
+<div id="main">
 <p><?php
 	if($numFlg === 1){
 		
