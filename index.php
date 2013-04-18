@@ -2,6 +2,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" href="./style.css" type="text/css" media="screen" />
 <title>コードブレイカー</title>
 </head>
 <body>
@@ -17,7 +18,7 @@ file_put_contents('gameM',$f);
 
 ?>
 
-<div>
+<div id="index-main">
 <p>コードブレイカーを始めます</p>
 <p>プレイする桁数を選択してください</p>
 <form action="./game.php" method="post">
