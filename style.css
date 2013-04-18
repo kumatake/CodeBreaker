@@ -2,9 +2,12 @@
 /* CSS Document */
 
 *{
-	margin:0;
-	padding:0;
-	list-style:none;
+	margin: auto;
+	padding: 0;
+	list-style: none;
+	height: auto;
+	width: auto;
+	text-align: center;
 }
 
 body{
@@ -13,9 +16,11 @@ body{
 
 #index-main{
 	/*ackground-color:#FFF;*/
-	margin-left:auto;
-	margin-right:auto;
-	padding:50px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 50px;
+	margin-top: auto;
+	margin-bottom: auto;
 }
 
 #index-main p{
@@ -27,4 +32,9 @@ body{
 #index-main input{
 	margin-left: auto;
 	margin-right: auto;
+}
+
+#index-title {
+	margin: 10px;
+	color:#006
 }

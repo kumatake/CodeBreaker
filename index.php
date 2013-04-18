@@ -17,6 +17,9 @@ $f = serialize($game);
 file_put_contents('gameM',$f);
 
 ?>
+<header>
+	<h1 id="index-title">Code Breaker</h1>
+</header>
 
 <div id="index-main">
 <p>コードブレイカーを始めます</p>
