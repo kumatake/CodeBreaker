@@ -19,10 +19,12 @@ body{
 }
 
 #index-main p{
-	margin-left:500px;
-	margin-bottom:10px;
+	margin-left: auto;
+	margin-bottom: 10px;
+	margin-right: auto;
 }
 
 #index-main input{
-	margin-left:550px;
+	margin-left: auto;
+	margin-right: auto;
 }
