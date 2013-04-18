@@ -164,9 +164,9 @@ class gameMaster
 		if($result->getEat() === $this->digitNumber){
 			
 			if($this->turn)
-				echo 'Player1Win!' . nl2br("\n");
+				echo '<font color="#FF0000" size="5">Player1Win!</font>' . nl2br("\n");
 			else
-				echo 'Player2Win!' . nl2br("\n");
+				echo '<font color="#FF0000" size="5">Player2Win!</font>' . nl2br("\n");
 			
 			$this->endFlg = true;
 			
