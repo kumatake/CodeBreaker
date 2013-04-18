@@ -11,7 +11,8 @@
 }
 
 body{
-	background-color:#6FC;
+	/* [disabled]background-color: #6FC; */
+	background-image: url(pic/b017.jpg);
 }
 
 #main{
