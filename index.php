@@ -22,9 +22,9 @@ file_put_contents('gameM',$f);
 </header>
 
 <div id="main">
-<p id="indexp">コードブレイカーを始めます</p>
-<p id="indexp">プレイする桁数を選択してください</p>
-<form id="indexform" action="./game.php" method="post">
+<p id="index-p">コードブレイカーを始めます</p>
+<p id="index-p">プレイする桁数を選択してください</p>
+<form id="index-form" action="./game.php" method="post">
 <input type="number" name="setdigit" max="5" min="3" value="3"/><br>
 <input type="submit" name="start" value="ゲームスタート" />
 </form>
