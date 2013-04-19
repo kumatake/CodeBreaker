@@ -78,39 +78,39 @@ file_put_contents('gameM',$f);
 </header>
 
 <div id="main">
-<p><?php
-	if($numFlg === 1){
+	<p><?php
+		if($numFlg === 1){
 		
-		echo '<font size="5" color="#FF0000"><b>入力された桁数が正しくありません。入力しなおしてください。</b></font>';
+			echo '<font size="5" color="#FF0000"><b>入力された桁数が正しくありません。入力しなおしてください。</b></font>';
 		
-	} else if($numFlg === 2){
-		echo '<font size="5" color="#FF0000"><b>数字が重複しています。入力しなおしてください。</b></font>';
-	}
-?></p>
-<p><?php
-	if($a->getTurn()){
-		echo 'プレイヤー１';
-	}else{
-		echo 'プレイヤー２';
-	}
-?></p>
-<p>数列を入力してください</p>
-<form action="<?php $_SERVER['PHP_SELF']; ?>" method="post">
+		} else if($numFlg === 2){
+			echo '<font size="5" color="#FF0000"><b>数字が重複しています。入力しなおしてください。</b></font>';
+		}
+	?></p>
+	<p><?php
+		if($a->getTurn()){
+			echo 'プレイヤー１';
+		}else{
+			echo 'プレイヤー２';
+		}
+	?></p>
+	<p>数列を入力してください</p>
+	<form action="<?php $_SERVER['PHP_SELF']; ?>" method="post">
 
-<?php
-for($i=0;$i<$a->getLength();$i++){
-	echo "<input type='password' name='$i' maxlength='1' size='1'>";
-}
-?>
+		<?php
+			for($i=0;$i<$a->getLength();$i++){
+				echo "<input type='password' name='$i' maxlength='1' size='1'>";
+			}
+		?>
 
-<input type="submit" name=
-<?php
-if($a->getTurn()){
-	echo "\"set1\"";
-}else{
-	echo "\"set2\"";
-}?> value="OK" /> 
-</form>
+		<input type="submit" name= <?php
+			if($a->getTurn()){
+				echo "\"set1\"";
+			}else{
+				echo "\"set2\"";
+			}
+		?> value="OK" /> 
+	</form>
 </div>
 
 </body>
