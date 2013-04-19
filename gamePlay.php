@@ -23,61 +23,61 @@ file_put_contents('gameM',$f);
 </header>
 
 <div id="main">
-<b>
-<?php
-	if($a->getTurn()){
-		echo "<p style='font-size:20px; color:#F00;'>プレイヤー１のターン";
-	}else{
-		echo '<p style="font-size:20px; color:#00F;">プレイヤー２のターン';
-	}
-?></p></b></br>
-<p>相手の数列の予想を入力してください</p>
-<form action="./result.php" method="post">
+	<b>
+	<?php
+		if($a->getTurn()){
+			echo "<p style='font-size:20px; color:#F00;'>プレイヤー１のターン";
+		}else{
+			echo '<p style="font-size:20px; color:#00F;">プレイヤー２のターン';
+		}
+	?></p></b></br>
+	<p>相手の数列の予想を入力してください</p>
+	<form action="./result.php" method="post">
 
-<?php
-for($i=0;$i<$a->getLength();$i++){
-	echo "<select name='$i'>
-<option value='0' selected>0</option>
-<option value='1'>1</option>
-<option value='2'>2</option>
-<option value='3'>3</option>
-<option value='4'>4</option>
-<option value='5'>5</option>
-<option value='6'>6</option>
-<option value='7'>7</option>
-<option value='8'>8</option>
-<option value='9'>9</option>
-</select>";
-}
-?>
+	<?php
+		for($i=0;$i<$a->getLength();$i++){
+			echo "<select name='$i'>
+			<option value='0' selected>0</option>
+			<option value='1'>1</option>
+			<option value='2'>2</option>
+			<option value='3'>3</option>
+			<option value='4'>4</option>
+			<option value='5'>5</option>
+			<option value='6'>6</option>
+			<option value='7'>7</option>
+			<option value='8'>8</option>
+			<option value='9'>9</option>
+			</select>";
+		}
+	?>
 
-<input type="submit" name="call" value="コール" />
-</form>
+	<input type="submit" name="call" value="コール" />
+	</form>
 </div>
 
 <div id="his" style="height:auto; width:600px;">
 
-<div id="myhis" style="height:auto; width:300px; float:left;">
-	<p>P1のコール履歴</p>
-	<div class="history">
-	<p>
-		<?php
-			$a->player1History();
-		?>
-		</p>
+	<div id="myhis" style="height:auto; width:300px; float:left;">
+		<p>P1のコール履歴</p>
+		<div class="history">
+			<p>
+			<?php
+				$a->player1History();
+			?>
+			</p>
+		</div>
 	</div>
-</div>
 
-<div id="enhis" style="height:auto; width:300px; float:left;">
-	<p>P2のコール履歴</p>
-	<div class="history">
-	<p>
-		<?php
-			$a->player2History();
-		?>
-		</p>
+	<div id="enhis" style="height:auto; width:300px; float:left;">
+		<p>P2のコール履歴</p>
+		<div class="history">
+			<p>
+			<?php
+				$a->player2History();
+			?>
+			</p>
+		</div>
 	</div>
-</div>
 
 </div>
 </body>
