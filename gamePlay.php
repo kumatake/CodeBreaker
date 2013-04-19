@@ -23,13 +23,14 @@ file_put_contents('gameM',$f);
 </header>
 
 <div id="main">
-<p><?php
+<b>
+<?php
 	if($a->getTurn()){
-		echo 'プレイヤー１のターン';
+		echo "<p style='font-size:20px; color:#F00;'>プレイヤー１のターン";
 	}else{
-		echo 'プレイヤー２のターン';
+		echo '<p style="font-size:20px; color:#00F;">プレイヤー２のターン';
 	}
-?></p>
+?></p></b></br>
 <p>相手の数列の予想を入力してください</p>
 <form action="./result.php" method="post">
 
